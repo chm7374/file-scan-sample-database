@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# This program generates many many files with different extensions,
+# because doing all these by hand would take forever.
+
+echo 'Hello World!'
+extensions="$( cat file_ext.txt )"
+IFS=' ' read -r -a ext <<< $extensions
+echo "${ext[0]}"
+echo "${ext[1]}"
+
+for i in "${ext[@]}"
+do
+	echo "* $i"
+done
